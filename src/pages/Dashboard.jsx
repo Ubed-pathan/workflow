@@ -185,12 +185,20 @@ const Dashboard = () => {
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-lg font-semibold text-gray-900">Attendance Overview</h3>
             <div className="flex items-center gap-2">
-              <button className="p-1 hover:bg-gray-100 rounded">
-                <span className="text-gray-600">‹</span>
+              <button 
+                onClick={goToPreviousMonth}
+                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                <ChevronLeft className="w-4 h-4 text-gray-600" />
               </button>
-              <span className="text-sm font-medium">June, 2025</span>
-              <button className="p-1 hover:bg-gray-100 rounded">
-                <span className="text-gray-600">›</span>
+              <span className="text-sm font-medium min-w-[120px] text-center">
+                {getMonthName(currentDate)}
+              </span>
+              <button 
+                onClick={goToNextMonth}
+                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                <ChevronRight className="w-4 h-4 text-gray-600" />
               </button>
             </div>
           </div>
@@ -211,15 +219,37 @@ const Dashboard = () => {
               {calendarDays.map((day, index) => (
                 <div
                   key={index}
+                  onClick={() => handleDateClick(day)}
                   className={`
-                    aspect-square flex items-center justify-center text-sm rounded
+                    aspect-square flex items-center justify-center text-sm rounded-lg transition-all duration-200
                     ${day === null ? '' : 'hover:bg-gray-100 cursor-pointer'}
-                    ${day === 16 ? 'bg-blue-600 text-white' : 'text-gray-700'}
+                    ${isToday(day) ? 'bg-blue-600 text-white font-semibold shadow-md' : ''}
+                    ${isSelected(day) && !isToday(day) ? 'bg-blue-100 text-blue-700 font-medium' : ''}
+                    ${day && !isToday(day) && !isSelected(day) ? 'text-gray-700 hover:text-gray-900' : ''}
                   `}
                 >
                   {day}
                 </div>
               ))}
+            </div>
+            
+            {/* Calendar Legend */}
+            <div className="flex items-center justify-between mt-4 pt-4 border-t">
+              <div className="flex items-center gap-4 text-xs">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-blue-600 rounded"></div>
+                  <span className="text-gray-600">Today</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-blue-100 rounded"></div>
+                  <span className="text-gray-600">Selected</span>
+                </div>
+              </div>
+              {selectedDate && (
+                <div className="text-xs text-gray-600">
+                  Selected: {getMonthName(currentDate).split(',')[0]} {selectedDate}, {currentDate.getFullYear()}
+                </div>
+              )}
             </div>
           </div>
         </div>
