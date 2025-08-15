@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 
-const AddEmployeeModal = ({ onClose, onSubmit, departments, roles }) => {
+const AddEmployeeModal = ({ isOpen, onClose, onSubmit, departments, roles }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +17,13 @@ const AddEmployeeModal = ({ onClose, onSubmit, departments, roles }) => {
       return;
     }
     onSubmit(formData);
+    // Reset form after successful submission
+    setFormData({
+      name: '',
+      email: '',
+      role: '',
+      department: ''
+    });
   };
 
   const handleInputChange = (e) => {
@@ -27,8 +34,11 @@ const AddEmployeeModal = ({ onClose, onSubmit, departments, roles }) => {
     }));
   };
 
+  // Don't render if modal is not open
+  if (!isOpen) return null;
+
   const modalContent = (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" style={{ filter: 'none' }}>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div className="flex">
           {/* Left side - Illustration */}

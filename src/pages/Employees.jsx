@@ -178,14 +178,13 @@ const Employees = () => {
       </div>
 
       {/* Add Employee Modal - Outside the blurred container */}
-      {showModal && (
-        <AddEmployeeModal
-          onClose={() => setShowModal(false)}
-          onSubmit={handleAddEmployee}
-          departments={departments}
-          roles={roles}
-        />
-      )}
+      <AddEmployeeModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        onSubmit={handleAddEmployee}
+        departments={departments}
+        roles={roles}
+      />
     </>
   );
 };
