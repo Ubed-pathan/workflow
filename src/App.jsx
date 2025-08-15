@@ -19,8 +19,8 @@ function App() {
         <Route path="/" element={<AuthLayout />} />
         
         {/* Auth Routes - Full screen without sidebar */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+{/*         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} /> */}
         
         {/* Dashboard Routes - With sidebar layout */}
         <Route path="/dashboard" element={
