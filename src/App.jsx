@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
+import AuthLayout from './components/AuthLayout';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
@@ -14,6 +15,9 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* Auth Layout - Default landing page with sidebar + auth cards */}
+        <Route path="/" element={<AuthLayout />} />
+        
         {/* Auth Routes - Full screen without sidebar */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -47,8 +51,7 @@ function App() {
           </Layout>
         } />
         
-        {/* Default redirect */}
-        <Route path="/" element={<Navigate to="/signup" replace />} />
+        {/* Default redirect - removed since "/" now goes to AuthLayout */}
       </Routes>
     </Router>
   );
