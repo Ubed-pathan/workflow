@@ -21,8 +21,6 @@ function App() {
         {/* Auth Routes - Full screen without sidebar */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/components" element={<Components />} />
-        <Route path="/color-style" element={<ColorStyle />} />
         
         {/* Dashboard Routes - With sidebar layout */}
         <Route path="/dashboard" element={
