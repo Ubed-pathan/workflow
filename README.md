@@ -11,30 +11,10 @@
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0+-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-[🚀 Live Demo](#demo) • [📖 Documentation](#features) • [🛠️ Installation](#installation) • [🎨 Screenshots](#screenshots)
+[🚀 Live Demo](https://workflow-henna.vercel.app/)
 
 </div>
 
----
-
-## 📋 Table of Contents
-
-- [✨ Features](#-features)
-- [🚀 Demo](#-demo)
-- [🛠️ Installation](#️-installation)
-- [💻 Usage](#-usage)
-- [🎨 Screenshots](#-screenshots)
-- [🏗️ Project Structure](#️-project-structure)
-- [🔧 Technologies Used](#-technologies-used)
-- [🎯 Key Highlights](#-key-highlights)
-- [📱 Responsive Design](#-responsive-design)
-- [🔐 Authentication System](#-authentication-system)
-- [🚀 Getting Started](#-getting-started)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [👤 Author](#-author)
-
----
 
 ## ✨ Features
 
@@ -167,32 +147,12 @@ npm run preview
 
 ### 🌈 Authentication Interface
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    🎨 Gradient Background               │
-│  ┌─────────────────┐ │ ┌─────────────────┐             │
-│  │   Signup Form   │ │ │  Login Options  │             │
-│  │  - Email        │ │ │ - Quick Login   │             │
-│  │  - Password     │ │ │ - Social Auth   │             │
-│  │  - Confirm Pass │ │ │ - Support       │             │
-│  │  - Role Select  │ │ │                 │             │
-│  │  - Terms Accept │ │ │                 │             │
-│  └─────────────────┘ │ └─────────────────┘             │
-└─────────────────────────────────────────────────────────┘
+![Auth](/public/login.png)
 ```
 
 ### 📊 Dashboard Layout
 ```
-┌───────────────────────────────────────────────────────────┐
-│ 🏢 Workflow Logo                                         │
-├───────────────────────────────────────────────────────────┤
-│ 📊 Dashboard  │  📈 Analytics Cards                       │
-│ 👥 Employees  │  ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐        │
-│ 📅 Attendance │  │ 150 │ │ 25  │ │ 98% │ │ $2M │        │
-│ ✅ Tasks      │  │Users│ │Tasks│ │Perf │ │Rev  │        │
-│ ⚙️ Settings   │  └─────┘ └─────┘ └─────┘ └─────┘        │
-├───────────────────────────────────────────────────────────┤
-│ 👤 User Profile                                          │
-└───────────────────────────────────────────────────────────┘
+![Dashboard](/public/dashboard.png)
 ```
 
 ---
@@ -272,15 +232,6 @@ workflow/
 
 ---
 
-## 📱 Responsive Design
-
-| Device | Breakpoint | Layout |
-|--------|------------|--------|
-| 📱 Mobile | < 768px | Stacked navigation, full-width cards |
-| 📟 Tablet | 768px - 1024px | Collapsible sidebar, responsive grid |
-| 💻 Desktop | > 1024px | Full sidebar, multi-column layout |
-| 🖥️ Large | > 1440px | Wide layout, enhanced spacing |
-
 ---
 
 ## 🔐 Authentication System
@@ -351,19 +302,16 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 👤 Author
 
 **Ubed Pathan**
-- 📧 Email: [your.email@example.com]
+- 📧 Email: ubedpathan818@gmail.com
 - 🐙 GitHub: [@Ubed-pathan](https://github.com/Ubed-pathan)
-- 💼 LinkedIn: [Your LinkedIn Profile]
-- 🌐 Portfolio: [Your Portfolio Website]
+- 💼 LinkedIn: https://www.linkedin.com/in/ubed-pathan-35a715242
+- 🌐 Portfolio: https://ubed.tech/
 
 ---
 
@@ -375,15 +323,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 [![⭐ Star this repo](https://img.shields.io/badge/⭐-Star%20this%20repo-yellow?style=for-the-badge)](https://github.com/Ubed-pathan/workflow)
 
-</div>+ Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+</div>
