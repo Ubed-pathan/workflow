@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search, Plus, Download, Edit, Trash2 } from 'lucide-react';
 import { employees, departments, roles } from '../data/mockData';
 import AddEmployeeModal from '../components/AddEmployeeModal';
@@ -8,6 +8,31 @@ const Employees = () => {
   const [sortBy, setSortBy] = useState('Newest');
   const [showModal, setShowModal] = useState(false);
   const [employeeList, setEmployeeList] = useState(employees);
+
+  // Apply blur effect to the main content when modal opens
+  useEffect(() => {
+    const rootElement = document.getElementById('root');
+    
+    if (showModal) {
+      if (rootElement) {
+        rootElement.style.filter = 'blur(4px)';
+        rootElement.style.pointerEvents = 'none';
+      }
+    } else {
+      if (rootElement) {
+        rootElement.style.filter = 'none';
+        rootElement.style.pointerEvents = 'auto';
+      }
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      if (rootElement) {
+        rootElement.style.filter = 'none';
+        rootElement.style.pointerEvents = 'auto';
+      }
+    };
+  }, [showModal]);
 
   const filteredEmployees = employeeList.filter(employee =>
     employee.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -34,7 +59,7 @@ const Employees = () => {
 
   return (
     <>
-      <div className={`space-y-6 transition-all duration-300 ${showModal ? 'blur-md' : ''}`}>
+      <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold text-gray-900">Employees</h1>

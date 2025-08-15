@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 
 const AddEmployeeModal = ({ onClose, onSubmit, departments, roles }) => {
@@ -26,8 +27,8 @@ const AddEmployeeModal = ({ onClose, onSubmit, departments, roles }) => {
     }));
   };
 
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+  const modalContent = (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" style={{ filter: 'none' }}>
       <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div className="flex">
           {/* Left side - Illustration */}
@@ -171,6 +172,9 @@ const AddEmployeeModal = ({ onClose, onSubmit, departments, roles }) => {
       </div>
     </div>
   );
+
+  // Render modal outside the root element to avoid blur
+  return createPortal(modalContent, document.body);
 };
 
 export default AddEmployeeModal;
