@@ -28,8 +28,13 @@ const SignupCard = ({ onSwitchToSignin, onSwitchToSignup, isSignupView = true })
       alert('Please accept the terms and conditions');
       return;
     }
-    // Simulate signup
+    // Simulate signup success
     console.log('Signup form submitted:', formData);
+    
+    // Switch to signin view directly
+    if (onSwitchToSignin) {
+      onSwitchToSignin();
+    }
   };
 
   // If this is not the signup view (when signin is active), show simple signup option
