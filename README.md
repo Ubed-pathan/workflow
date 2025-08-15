@@ -6,12 +6,12 @@
 
 **A modern, responsive employee management system built with React and TailwindCSS**
 
+[🚀 Live Demo](https://workflow-henna.vercel.app/)
+
 [![React](https://img.shields.io/badge/React-18.0+-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-5.0+-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0+-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-[🚀 Live Demo](https://workflow-henna.vercel.app/)
 
 </div>
 
@@ -146,14 +146,14 @@ npm run preview
 ## 🎨 Screenshots
 
 ### 🌈 Authentication Interface
-```
-![Auth](/public/login.png)
-```
+![Auth Interface](./public/login.png)
+
+*Beautiful gradient authentication interface with signup and signin cards*
 
 ### 📊 Dashboard Layout
-```
-![Dashboard](/public/dashboard.png)
-```
+![Dashboard](./public/dashboard.png)
+
+*Modern dashboard with sidebar navigation and analytics cards*
 
 ---
 
